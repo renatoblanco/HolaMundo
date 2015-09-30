@@ -34,7 +34,7 @@ public class SaludoActivity extends AppCompatActivity {
 
         //Construimos el mensaje a mostrar
 
-         TxtSaludo.setText("Hola " + bundle.getString("NOMBRE") + lista.get(1).toString());
+         TxtSaludo.setText("Hola " + bundle.getString("NOMBRE") + lista.get(1));
         Button BtnMapa = (Button)findViewById(R.id.BtnMapa);
 
         //Implementamos el evento click del botón
@@ -75,7 +75,7 @@ public class SaludoActivity extends AppCompatActivity {
     }
 
     public ArrayList<String> getLista(){
-        DB db = new DB();
+        DB db = new DB();//base
         ArrayList<String> lista = new ArrayList<>();
         try {
             ResultSet resultSet = db.select(Querys.USUARIOS_ACTIVOS);
@@ -84,10 +84,11 @@ public class SaludoActivity extends AppCompatActivity {
 
                     lista.add(resultSet.getString("value"));
 
+
                 }
             }
         }catch (Exception ex){
-
+            //falta capturar la excepcion
         }
         return lista;
     }
