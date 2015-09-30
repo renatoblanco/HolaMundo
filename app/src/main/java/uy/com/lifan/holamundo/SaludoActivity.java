@@ -89,6 +89,7 @@ public class SaludoActivity extends AppCompatActivity {
             }
         }catch (Exception ex){
             //falta capturar la excepcion
+            db=null;
         }
         return lista;
     }
