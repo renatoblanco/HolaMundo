@@ -89,7 +89,7 @@ public class SaludoActivity extends AppCompatActivity {
             }
         }catch (Exception ex){
 //aca me falta capturar la excpcion
-            //no comitea?
+            //no comitea
         }
         return lista;
 
